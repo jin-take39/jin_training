@@ -49,7 +49,7 @@
             ※非同期はなしとする。
         </p>
         <p>
-            <form action="http://www.jin-dev-tt.jin-it.co.jp:8010/ex2/answer.php"method="POST">
+            <form action="http://www.jin-dev-tt.jin-it.co.jp:8010/take/jin_training/ex2/answer.php"method="POST">
 
             <?php 
 
