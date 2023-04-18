@@ -18,11 +18,7 @@
                 }else{
                     echo($_POST["ex".$i] . " = " . $_POST["answer".$i] . " は不正解です。正解は「".$_POST["correct".$i] ."」です<br><br>");
                 }
-    
-
             }
-
-
         ?>
 
     </div>

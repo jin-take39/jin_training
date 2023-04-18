@@ -43,7 +43,7 @@
                     }
                 }
             }
-            $ansList[$i] = round($listWrk1[$i] / $listWrk2[$i],3);
+            $ansList[$i] = round($listWrk1[$i] / $listWrk2[$i],2);
 
         }else{
             $msgList[$i] = "四則演算エラー";
