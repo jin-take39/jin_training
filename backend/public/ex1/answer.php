@@ -7,7 +7,7 @@
 </head>
 <body>
     <div style="margin:20px">
-        <a href="http://www.jin-dev-tt.jin-it.co.jp:8010/index.html">課題</a><br><br>
+        <a href="http://www.jin-dev-tt.jin-it.co.jp:8010/take/jin_training/index.html">課題</a><br><br>
 
         <?php
             if($_POST["correct"] == $_POST["answer"]){
