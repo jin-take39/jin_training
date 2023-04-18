@@ -18,7 +18,7 @@
     // 問題10問作成
     for($i = 0 ; $i < 10 ; $i++){
         $listWrk1[] = rand(0,100);
-        $listWrk2[] = rand(0,1);
+        $listWrk2[] = rand(0,100);
         $listWrk3[] = $wrk[array_rand($wrk,1)];
 
         if($listWrk3[$i] == "+"){
