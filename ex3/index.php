@@ -18,7 +18,7 @@
     // 問題10問作成
     for($i = 0 ; $i < 10 ; $i++){
         $listWrk1[] = rand(0,100);
-        $listWrk2[] = rand(0,100);
+        $listWrk2[] = rand(0,1);
         $listWrk3[] = $wrk[array_rand($wrk,1)];
 
         if($listWrk3[$i] == "+"){
@@ -28,7 +28,23 @@
         }else if($listWrk3[$i] == "*"){
             $ansList[$i] = $listWrk1[$i] * $listWrk2[$i];
         }else if($listWrk3[$i] == "/"){
-            $ansList[$i] = $listWrk1[$i] / $listWrk2[$i];
+
+            // 分母が0の時は再取得
+            if($listWrk2[$i] == 0){
+
+                // 0で亡くなるまでループ
+                while(1==1){
+                    $wrkBunbo = rand(0,100);
+                    if($wrkBunbo != 0){
+
+                        // 分母格納
+                        $listWrk2[$i] = $wrkBunbo;
+                        break;
+                    }
+                }
+            }
+            $ansList[$i] = round($listWrk1[$i] / $listWrk2[$i],3);
+
         }else{
             $msgList[$i] = "四則演算エラー";
         }
@@ -44,12 +60,15 @@
         <a href="http://www.jin-dev-tt.jin-it.co.jp:8010/take/jin_training/index.html">課題</a><br>
         <p> 
         問1）
-            四則演算の出題を自動生成し画面に表示させます。</br>
-            ユーザが回答を入力し、回答ボタン押下して正誤判定を行ってください。</br>
-            ※非同期はなしとする。
+            問1の応用として、下記例外処理を実装してください。</br>
+            <ul>
+                <li>数字以外が入力された場合、エラー表示してください。</li>
+                <li>0で割ったときは、エラー表示してください。例）3 / 0 ⇒　エラー</li>
+                <li>割り算で小数点が発生した場合、小数第三位を四捨五入して正誤判定を行ってください。</li>
+            </ul>
         </p>
         <p>
-            <form action="http://www.jin-dev-tt.jin-it.co.jp:8010/take/jin_training/ex2/answer.php"method="POST">
+            <form action="http://www.jin-dev-tt.jin-it.co.jp:8010/take/jin_training/ex3/answer.php"method="POST">
 
             <?php 
 
