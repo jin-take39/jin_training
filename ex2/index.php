@@ -43,7 +43,7 @@
     <div style="margin:20px">
         <a href="http://www.jin-dev-tt.jin-it.co.jp:8010/take/jin_training/index.html">課題</a><br>
         <p> 
-        問1）
+        問2）
             四則演算の出題を自動生成し画面に表示させます。</br>
             ユーザが回答を入力し、回答ボタン押下して正誤判定を行ってください。</br>
             ※非同期はなしとする。
