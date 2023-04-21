@@ -1,0 +1,47 @@
+body{
+    font-family: "メイリオ" ;
+    font-size: 14px;
+}
+
+.header__inner {
+    max-width: 1230px;
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.header__logo {
+    background-image: url(https://www.jin-it.co.jp/assets/images/logo.png);
+    background-size: 215px;
+    width: 215px;
+    height: 64px;
+}
+
+.title{
+    margin: 20px;
+    padding: 5px;
+    background-color: cornflowerblue;
+}
+
+.title > h1{
+    padding-left:20px;
+}
+
+.contents{
+    margin: 20px;
+    padding: 20px;
+    background-color:lightcyan;
+}
+
+.contents > ul > li{
+    padding-bottom: 5px;
+}

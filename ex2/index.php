@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://www.jin-dev-tt.jin-it.co.jp:8010/take/jin_training/css/common.css">
     <title>Just In Next スキルアップ研修</title>
 </head>
 
@@ -40,35 +41,50 @@
 ?>
 
 <body>
-    <div style="margin:20px">
-        <a href="http://www.jin-dev-tt.jin-it.co.jp:8010/take/jin_training/index.html">課題</a><br>
-        <p> 
-        問2）
-            四則演算の出題を自動生成し画面に表示させます。</br>
-            ユーザが回答を入力し、回答ボタン押下して正誤判定を行ってください。</br>
-            ※非同期はなしとする。
-        </p>
-        <p>
-            <form action="http://www.jin-dev-tt.jin-it.co.jp:8010/take/jin_training/ex2/answer.php"method="POST">
 
-            <?php 
+    <section class="container">
 
-                foreach($ansList as $key=>$val){
+        <header class="header" id="header">
+            <div class="header__inner">
+                <a href="http://www.jin-dev-tt.jin-it.co.jp:8010/take/jin_training/index.html"><div class="header__logo"></div></a>
+            </div>
+        </header>
 
-                    if( array_key_exists($key,$msgList)){
-                        echo($msgList[$key]);
-                    }else{
-                        echo($listWrk1[$key] . " " . $listWrk3[$key] . " " . $listWrk2[$key] . '= <input type="text" name="answer'.$key.'"></input>');
-                    }
+        <section class="title">
+            <h1>Just In Next PHP 言語研修</h1>
+        </section>
+        <section class="contents">
 
-                    echo('<input type="hidden" name="correct'.$key.'" value= ' . $ansList[$key] . '><br><br>');
-                    echo('<input type="hidden" name="ex'.$key.'" value= "' . $listWrk1[$key] . " " . $listWrk3[$key] . " " . $listWrk2[$key] . '"><br><br>');
-                } 
-            ?>
-                
-                <button>答え合わせ</button>
-            </form>
-        </p>
-    </div>
+            <p> 
+            問2）
+                四則演算の出題を自動生成し画面に表示させます。</br>
+                ユーザが回答を入力し、回答ボタン押下して正誤判定を行ってください。</br>
+                ※非同期はなしとする。
+            </p>
+            <p>
+                <form action="http://www.jin-dev-tt.jin-it.co.jp:8010/take/jin_training/ex2/answer.php"method="POST">
+
+                <?php 
+
+                    foreach($ansList as $key=>$val){
+
+                        if( array_key_exists($key,$msgList)){
+                            echo($msgList[$key]);
+                        }else{
+                            echo($listWrk1[$key] . " " . $listWrk3[$key] . " " . $listWrk2[$key] . '= <input type="text" name="answer'.$key.'"></input>');
+                        }
+
+                        echo('<input type="hidden" name="correct'.$key.'" value= ' . $ansList[$key] . '><br><br>');
+                        echo('<input type="hidden" name="ex'.$key.'" value= "' . $listWrk1[$key] . " " . $listWrk3[$key] . " " . $listWrk2[$key] . '"><br><br>');
+                    } 
+                ?>
+                    
+                    <button>答え合わせ</button>
+                </form>
+            </p>
+
+        </section>
+    </section>
+
 </body>
 </html>

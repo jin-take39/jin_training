@@ -26,31 +26,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://www.jin-dev-tt.jin-it.co.jp:8010/take/jin_training/css/common.css">
     <title>Just In Next スキルアップ研修</title>
 </head>
 
 <body>
-    <div style="margin:20px">
 
-        <p>
-            <form action="http://www.jin-dev-tt.jin-it.co.jp:8010/take/jin_training/ex6/answer.php"method="POST">
+    <section class="container">
 
-            <?php 
+    <header class="header" id="header">
+        <div class="header__inner">
+            <a href="http://www.jin-dev-tt.jin-it.co.jp:8010/take/jin_training/index.html"><div class="header__logo"></div></a>
+        </div>
+    </header>
 
-                foreach($data as $key=>$val){
+    <section class="title">
+            <h1>Just In Next PHP 言語研修</h1>
+        </section>
+        <section class="contents">
 
-                    echo($val["question"] . '= <input type="text" name="data['.$key.'][answer]"></input>');
-                    echo('<input type="hidden" name="data['.$key.'][correct]" value= ' . $val["correct"] . '><br><br>');
-                    echo('<input type="hidden" name="data['.$key.'][ex]" value= "' . $val["question"] . '"><br><br>');
-                }
+            <p>
+                <form action="http://www.jin-dev-tt.jin-it.co.jp:8010/take/jin_training/ex6/answer.php"method="POST">
+
+                <?php 
+
+                    foreach($data as $key=>$val){
+
+                        echo($val["question"] . '= <input type="text" name="data['.$key.'][answer]"></input>');
+                        echo('<input type="hidden" name="data['.$key.'][correct]" value= ' . $val["correct"] . '><br><br>');
+                        echo('<input type="hidden" name="data['.$key.'][ex]" value= "' . $val["question"] . '"><br><br>');
+                    }
 
 
-                echo('<input type="hidden" name="start" value= "' . $objDateTime->format('Y-m-d H:i:s') . '">');
-            ?>
-                
-                <button>答え合わせ</button>
-            </form>
-        </p>
-    </div>
+                    echo('<input type="hidden" name="start" value= "' . $objDateTime->format('Y-m-d H:i:s') . '">');
+                ?>
+                    
+                    <button>答え合わせ</button>
+                </form>
+            </p>
+
+        </section>
+    </section>
+
 </body>
 </html>

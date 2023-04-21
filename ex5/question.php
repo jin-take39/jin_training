@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://www.jin-dev-tt.jin-it.co.jp:8010/take/jin_training/css/common.css">
     <title>Just In Next スキルアップ研修</title>
 </head>
 
@@ -80,30 +81,45 @@
 ?>
 
 <body>
-    <div style="margin:20px">
 
-        <p>
-            <form action="http://www.jin-dev-tt.jin-it.co.jp:8010/take/jin_training/ex5/answer.php"method="POST">
+    <section class="container">
 
-            <?php 
+        <header class="header" id="header">
+            <div class="header__inner">
+                <a href="http://www.jin-dev-tt.jin-it.co.jp:8010/take/jin_training/index.html"><div class="header__logo"></div></a>
+            </div>
+        </header>
 
-                foreach($ansList as $key=>$val){
+        <section class="title">
+            <h1>Just In Next PHP 言語研修</h1>
+        </section>
+        <section class="contents">
 
-                    if( array_key_exists($key,$msgList)){
-                        echo($msgList[$key]);
-                    }else{
-                        echo($listWrk1[$key] . " " . $listWrk3[$key] . " " . $listWrk2[$key] . '= <input type="text" name="answer'.$key.'"></input>');
+            <p>
+                <form action="http://www.jin-dev-tt.jin-it.co.jp:8010/take/jin_training/ex5/answer.php"method="POST">
+
+                <?php 
+
+                    foreach($ansList as $key=>$val){
+
+                        if( array_key_exists($key,$msgList)){
+                            echo($msgList[$key]);
+                        }else{
+                            echo($listWrk1[$key] . " " . $listWrk3[$key] . " " . $listWrk2[$key] . '= <input type="text" name="answer'.$key.'"></input>');
+                        }
+
+                        echo('<input type="hidden" name="correct'.$key.'" value= ' . $ansList[$key] . '><br><br>');
+                        echo('<input type="hidden" name="ex'.$key.'" value= "' . $listWrk1[$key] . " " . $listWrk3[$key] . " " . $listWrk2[$key] . '"><br><br>');
                     }
+                    echo('<input type="hidden" name="start" value= "' . $objDateTime->format('Y-m-d H:i:s') . '">');
+                ?>
+                    
+                    <button>答え合わせ</button>
+                </form>
+            </p>
 
-                    echo('<input type="hidden" name="correct'.$key.'" value= ' . $ansList[$key] . '><br><br>');
-                    echo('<input type="hidden" name="ex'.$key.'" value= "' . $listWrk1[$key] . " " . $listWrk3[$key] . " " . $listWrk2[$key] . '"><br><br>');
-                }
-                echo('<input type="hidden" name="start" value= "' . $objDateTime->format('Y-m-d H:i:s') . '">');
-            ?>
-                
-                <button>答え合わせ</button>
-            </form>
-        </p>
-    </div>
+        </section>
+    </section>
+
 </body>
 </html>
